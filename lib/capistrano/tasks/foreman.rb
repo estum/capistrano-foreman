@@ -7,7 +7,7 @@ namespace :foreman do
   desc 'Export the Procfile'
   task :export do
     on roles fetch(:foreman_roles) do
-      within release_path do
+      within current_path do
         opts = {
           app: fetch(:application),
           log: File.join(shared_path, 'log'),
